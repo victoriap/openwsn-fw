@@ -26,6 +26,88 @@ void idmanager_init() {
 
    eui64_get(idmanager_vars.my64bID.addr_64b);
    packetfunctions_mac64bToMac16b(&idmanager_vars.my64bID,&idmanager_vars.my16bID);
+
+   //Set the address for my root mote
+	memset(&root_addr_64b,0,sizeof(root_addr_64b));
+	root_addr_64b.type = ADDR_64B;
+	root_addr_64b.addr_64b[0] = 0x14;
+	root_addr_64b.addr_64b[1] = 0x15;
+	root_addr_64b.addr_64b[2] = 0x92;
+	root_addr_64b.addr_64b[3] = 0x00;
+	root_addr_64b.addr_64b[4] = 0x00;
+	root_addr_64b.addr_64b[5] = 0x11;
+	root_addr_64b.addr_64b[6] = 0x6c;
+	root_addr_64b.addr_64b[7] = 0x49;
+	/*root_addr_64b.addr_64b[3] = 0xcc;
+	root_addr_64b.addr_64b[4] = 0x00;
+	root_addr_64b.addr_64b[5] = 0x00;
+	root_addr_64b.addr_64b[6] = 0x00;
+	root_addr_64b.addr_64b[7] = 0x01;*/
+
+	memset(&root_addr_128b,0,sizeof(root_addr_128b));
+	root_addr_128b.type = ADDR_128B;
+	root_addr_128b.addr_128b[0] = 0x00;
+	root_addr_128b.addr_128b[1] = 0x00;
+	root_addr_128b.addr_128b[2] = 0x00;
+	root_addr_128b.addr_128b[3] = 0x00;
+	root_addr_128b.addr_128b[4] = 0x00;
+	root_addr_128b.addr_128b[5] = 0x00;
+	root_addr_128b.addr_128b[6] = 0x00;
+	root_addr_128b.addr_128b[7] = 0x00;
+	root_addr_128b.addr_128b[8] = 0x14;
+	root_addr_128b.addr_128b[9] = 0x15;
+	root_addr_128b.addr_128b[10] = 0x92;
+	root_addr_128b.addr_128b[11] = 0x00;
+	root_addr_128b.addr_128b[12] = 0x00;
+	root_addr_128b.addr_128b[13] = 0x11;
+	root_addr_128b.addr_128b[14] = 0x6c;
+	root_addr_128b.addr_128b[15] = 0x49;
+	/*root_addr_128b.addr_128b[11] = 0xcc;
+	root_addr_128b.addr_128b[12] = 0x00;
+	root_addr_128b.addr_128b[13] = 0x00;
+	root_addr_128b.addr_128b[14] = 0x00;
+	root_addr_128b.addr_128b[15] = 0x01;*/
+
+	//Set the address for my mobile mote
+	memset(&mobile_addr_64b,0,sizeof(mobile_addr_64b));
+	mobile_addr_64b.type = ADDR_64B;
+	mobile_addr_64b.addr_64b[0] = 0x14;
+	mobile_addr_64b.addr_64b[1] = 0x15;
+	mobile_addr_64b.addr_64b[2] = 0x92;
+	mobile_addr_64b.addr_64b[3] = 0x00;
+	mobile_addr_64b.addr_64b[4] = 0x00;
+	mobile_addr_64b.addr_64b[5] = 0x11;
+	mobile_addr_64b.addr_64b[6] = 0x6d;
+	mobile_addr_64b.addr_64b[7] = 0x11;
+	/*mobile_addr_64b.addr_64b[3] = 0xcc;
+	mobile_addr_64b.addr_64b[4] = 0x00;
+	mobile_addr_64b.addr_64b[5] = 0x00;
+	mobile_addr_64b.addr_64b[6] = 0x00;
+	mobile_addr_64b.addr_64b[7] = 0x02;*/
+
+	memset(&mobile_addr_128b,0,sizeof(mobile_addr_128b));
+	mobile_addr_128b.type = ADDR_128B;
+	mobile_addr_128b.addr_128b[0] = 0xbb;
+	mobile_addr_128b.addr_128b[1] = 0xbb;
+	mobile_addr_128b.addr_128b[2] = 0x00;
+	mobile_addr_128b.addr_128b[3] = 0x00;
+	mobile_addr_128b.addr_128b[4] = 0x00;
+	mobile_addr_128b.addr_128b[5] = 0x00;
+	mobile_addr_128b.addr_128b[6] = 0x00;
+	mobile_addr_128b.addr_128b[7] = 0x00;
+	mobile_addr_128b.addr_128b[8] = 0x14;
+	mobile_addr_128b.addr_128b[9] = 0x15;
+	mobile_addr_128b.addr_128b[10] = 0x92;
+	mobile_addr_128b.addr_128b[11] = 0x00;
+	mobile_addr_128b.addr_128b[12] = 0x00;
+	mobile_addr_128b.addr_128b[13] = 0x11;
+	mobile_addr_128b.addr_128b[14] = 0x6d;
+	mobile_addr_128b.addr_128b[15] = 0x11;
+	/*mobile_addr_128b.addr_128b[11] = 0xcc;
+	mobile_addr_128b.addr_128b[12] = 0x00;
+	mobile_addr_128b.addr_128b[13] = 0x00;
+	mobile_addr_128b.addr_128b[14] = 0x00;
+	mobile_addr_128b.addr_128b[15] = 0x02;*/
 }
 
 bool idmanager_getIsDAGroot() {

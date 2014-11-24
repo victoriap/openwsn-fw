@@ -90,6 +90,7 @@ enum {
    WKP_UDP_IMU                         =  2190,
    WKP_UDP_ECHO                        =     7,
    WKP_UDP_INJECT                      =  2188,
+   WKP_UDP_PRINT                       =  2189,
    WKP_UDP_DISCARD                     =     9,
    WKP_UDP_RAND                        = 61000,
    WKP_UDP_LATENCY                     = 61001,
@@ -327,6 +328,11 @@ typedef struct {
 } OpenQueueEntry_t;
 
 //=========================== variables =======================================
+
+open_addr_t root_addr_64b;                       //DAG root address
+open_addr_t root_addr_128b;
+open_addr_t mobile_addr_64b;                     //Mobile address
+open_addr_t mobile_addr_128b;
 
 //=========================== prototypes ======================================
 
