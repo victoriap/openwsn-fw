@@ -68,46 +68,46 @@ void schedule_init() {
    }
    
    //if I am the root, then add the following schedule
-      /*if(idmanager_isMyAddress(&root_addr_64b)){
-   	 //one dedicated RX to mobile (input)
-   	 schedule_addActiveSlot(
-   		running_slotOffset,         // slot offset
-   		CELLTYPE_RX,                // type of slot
-   		FALSE,                      // shared?
-   		0,                          // channel offset
-   		&mobile_addr_64b            // neighbor
-   	 );
-   	 running_slotOffset++;
-   	 //one dedicated TX to mobile (output)
-   	 schedule_addActiveSlot(
-   		running_slotOffset,         // slot offset
-   		CELLTYPE_TX,                // type of slot
-   		FALSE,                      // shared?
-   		0,                          // channel offset
-   		&mobile_addr_64b            // neighbor
-   	 );
-   	 running_slotOffset++;
-   	//else if I am the mobile, then add the following schedule
-   	} else if (idmanager_isMyAddress(&mobile_addr_64b)){
-   	 //one dedicated TX to dag root (input)
-   	 schedule_addActiveSlot(
-   		running_slotOffset,         // slot offset
-   		CELLTYPE_TX,                // type of slot
-   		FALSE,                      // shared?
-   		0,                          // channel offset
-   		&root_addr_64b              // neighbor
-   	 );
-   	 running_slotOffset++;
-   	 //one dedicated RX to dag root (output)
-   	 schedule_addActiveSlot(
-   		running_slotOffset,         // slot offset
-   		CELLTYPE_RX,                // type of slot
-   		FALSE,                      // shared?
-   		0,                          // channel offset
-   		&root_addr_64b              // neighbor
-   	 );
-   	 running_slotOffset++;
-   	}*/
+	/*if(idmanager_isMyAddress(&root_addr_64b)){
+		//one dedicated RX to mobile (input)
+		schedule_addActiveSlot(
+			running_slotOffset,         // slot offset
+			CELLTYPE_RX,                // type of slot
+			FALSE,                      // shared?
+			0,                          // channel offset
+			&mobile_addr_64b            // neighbor
+		);
+		running_slotOffset++;
+		//one dedicated TX to mobile (output)
+		schedule_addActiveSlot(
+			running_slotOffset,         // slot offset
+			CELLTYPE_TX,                // type of slot
+			FALSE,                      // shared?
+			0,                          // channel offset
+			&mobile_addr_64b            // neighbor
+		);
+		running_slotOffset++;
+	//else if I am the mobile, then add the following schedule
+	} else if (idmanager_isMyAddress(&mobile_addr_64b)){
+		//one dedicated TX to dag root (input)
+		schedule_addActiveSlot(
+			running_slotOffset,         // slot offset
+			CELLTYPE_TX,                // type of slot
+			FALSE,                      // shared?
+			0,                          // channel offset
+			&root_addr_64b              // neighbor
+		);
+		running_slotOffset++;
+		//one dedicated RX to dag root (output)
+		schedule_addActiveSlot(
+			running_slotOffset,         // slot offset
+			CELLTYPE_RX,                // type of slot
+			FALSE,                      // shared?
+			0,                          // channel offset
+			&root_addr_64b              // neighbor
+		);
+		running_slotOffset++;
+	}*/
 
    // serial RX slot(s)
    memset(&temp_neighbor,0,sizeof(temp_neighbor));

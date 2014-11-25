@@ -57,6 +57,9 @@ void openudp_sendDone(OpenQueueEntry_t* msg, owerror_t error) {
       case WKP_UDP_INJECT:
          udpinject_sendDone(msg,error);
          break;
+      case WKP_UDP_PRINT:
+      	udpprint_sendDone(msg,error);
+         break;
       case WKP_UDP_DISCARD:
          udpprint_sendDone(msg,error);
          break;
@@ -137,6 +140,9 @@ void openudp_receive(OpenQueueEntry_t* msg) {
       case WKP_UDP_INJECT:
          udpinject_receive(msg);
          break;
+      case WKP_UDP_PRINT:
+      	udpprint_receive(msg);
+			break;
       case WKP_UDP_DISCARD:
          udpprint_receive(msg);
          break;
