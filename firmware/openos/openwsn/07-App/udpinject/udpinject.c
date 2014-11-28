@@ -55,12 +55,19 @@ void udpinject_trigger() {
 
 void udpinject_sendDone(OpenQueueEntry_t* msg, owerror_t error) {
 
-   msg->owner = COMPONENT_UDPINJECT;
+	uint8_t msg_error[2] = {'S','D'};
+
+	msg->owner = COMPONENT_UDPINJECT;
    if (msg->creator!=COMPONENT_UDPINJECT) {
       openserial_printError(COMPONENT_UDPINJECT,ERR_UNEXPECTED_SENDDONE,
                             (errorparameter_t)0,
                             (errorparameter_t)0);
    }
+   if(error == E_SUCCESS)
+   	msg_error[1] = 'S';
+   else
+   	msg_error[1] = 'F';
+   openserial_printData(msg_error,2);
 
    openqueue_freePacketBuffer(msg);
 }

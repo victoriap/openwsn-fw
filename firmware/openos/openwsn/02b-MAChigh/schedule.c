@@ -68,7 +68,7 @@ void schedule_init() {
    }
    
    //if I am the root, then add the following schedule
-	/*if(idmanager_isMyAddress(&root_addr_64b)){
+	if(idmanager_isMyAddress(&root_addr_64b)){
 		//one dedicated RX to mobile (input)
 		schedule_addActiveSlot(
 			running_slotOffset,         // slot offset
@@ -107,7 +107,7 @@ void schedule_init() {
 			&root_addr_64b              // neighbor
 		);
 		running_slotOffset++;
-	}*/
+	}
 
    // serial RX slot(s)
    memset(&temp_neighbor,0,sizeof(temp_neighbor));
